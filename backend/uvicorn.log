@@ -1,0 +1,9 @@
+INFO:     Will watch for changes in these directories: ['D:\\visual stadio\\cc-pro\\backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [17156] using WatchFiles
+INFO:     Started server process [15048]
+INFO:     Waiting for application startup.
+2026-03-15 00:21:11 | INFO | cc_software — \U0001f680 CC Software API starting up...
+2026-03-15 00:21:16 | INFO | cc_software — \u2705 Database tables verified
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'seed_projects.py'. Reloading...

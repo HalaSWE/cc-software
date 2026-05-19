@@ -1,0 +1,10 @@
+from app.routes.auth        import router as auth_router
+from app.routes.users       import router as users_router
+from app.routes.projects    import router as projects_router
+from app.routes.selection   import router as selection_router
+from app.routes.wbs_evm     import router as wbs_evm_router
+from app.routes.reports     import router as reports_router
+from app.routes.analytics   import router as analytics_router
+from app.routes.comments    import router as comments_router
+from app.routes.members     import router as members_router
+from app.routes.pdf_reports import router as pdf_router

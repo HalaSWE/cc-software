@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>    CC Software · Project Intelligence Platform</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script>(function(){if(localStorage.getItem('cc_theme')==='light')document.documentElement.setAttribute('data-theme','light');})()</script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     LOGIN PAGE
+     ═══════════════════════════════════════════════ -->
+<div id="login-page" style="display:flex">
+  <button class="theme-toggle login-theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">
+    <span id="login-theme-icon" class="material-symbols-outlined">light_mode</span>
+  </button>
+  <div class="login-visual">
+    <div class="grid-overlay"></div>
+    <div class="login-brand">
+      <!-- Full logo on login page -->
+      <svg width="520" height="140" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
+        <defs>
+          <linearGradient id="lg-border" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3b82f6"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+          <linearGradient id="lg-cc-icon" x1="14" y1="14" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#93c5fd"/>
+            <stop offset="100%" stop-color="#c4b5fd"/>
+          </linearGradient>
+          <linearGradient id="lg-bar" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#3b82f6"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+          <linearGradient id="lg-cc-wm" x1="120" y1="20" x2="186" y2="76" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#93c5fd"/>
+            <stop offset="100%" stop-color="#60a5fa"/>
+          </linearGradient>
+          <linearGradient id="lg-sep" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3b82f6" stop-opacity="0"/>
+            <stop offset="35%" stop-color="#3b82f6" stop-opacity="0.5"/>
+            <stop offset="65%" stop-color="#8b5cf6" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="lg-divider" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#3b82f6"/>
+            <stop offset="50%" stop-color="#8b5cf6"/>
+            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- Icon squircle -->
+        <rect x="0" y="10" width="100" height="100" rx="22" fill="#0d1220"/>
+        <rect x="0" y="10" width="100" height="100" rx="22" fill="none" stroke="url(#lg-border)" stroke-width="1.5"/>
+        <!-- Dot grid -->
+        <circle cx="16" cy="26" r="1.5" fill="#1e2d45" opacity="0.8"/>
+        <circle cx="50" cy="26" r="1.5" fill="#1e2d45" opacity="0.8"/>
+        <circle cx="84" cy="26" r="1.5" fill="#1e2d45" opacity="0.8"/>
+        <circle cx="16" cy="60" r="1.5" fill="#1e2d45" opacity="0.5"/>
+        <circle cx="84" cy="60" r="1.5" fill="#1e2d45" opacity="0.5"/>
+        <!-- CC letters -->
+        <text x="50" y="72" text-anchor="middle" dominant-baseline="central"
+              font-family="Syne,sans-serif" font-size="40" font-weight="800"
+              letter-spacing="-1.5" fill="url(#lg-cc-icon)">CC</text>
+        <!-- Mini bar chart -->
+        <rect x="14" y="99"  width="5" height="7"  rx="1.5" fill="url(#lg-bar)" opacity="0.5"/>
+        <rect x="22" y="96"  width="5" height="10" rx="1.5" fill="url(#lg-bar)" opacity="0.65"/>
+        <rect x="30" y="91"  width="5" height="15" rx="1.5" fill="url(#lg-bar)" opacity="0.85"/>
+        <rect x="38" y="94"  width="5" height="12" rx="1.5" fill="url(#lg-bar)" opacity="0.75"/>
+        <rect x="46" y="97"  width="5" height="9"  rx="1.5" fill="url(#lg-bar)" opacity="0.65"/>
+        <rect x="54" y="99"  width="5" height="7"  rx="1.5" fill="url(#lg-bar)" opacity="0.55"/>
+        <rect x="62" y="101" width="5" height="5"  rx="1.5" fill="url(#lg-bar)" opacity="0.45"/>
+        <line x1="12" y1="108" x2="86" y2="108" stroke="#1a2235" stroke-width="0.5"/>
+        <!-- Vertical sep -->
+        <line x1="116" y1="10" x2="116" y2="120" stroke="url(#lg-sep)" stroke-width="0.5"/>
+        <!-- Wordmark: CC -->
+        <text x="128" y="70" font-family="Syne,sans-serif" font-size="36" font-weight="800"
+              letter-spacing="-0.5" fill="url(#lg-cc-wm)">CC</text>
+        <!-- Wordmark: Software -->
+        <text x="176" y="70" font-family="Syne,sans-serif" font-size="30" font-weight="300"
+              fill="#cbd5e1">Software</text>
+        <!-- Divider line -->
+        <rect x="128" y="78" width="382" height="0.5" fill="url(#lg-divider)"/>
+        <!-- Tagline -->
+        <text x="128" y="96" font-family="DM Mono,monospace" font-size="11"
+              fill="#64748b" letter-spacing="0.04em">Project Intelligence Platform</text>
+        <!-- Feature pills -->
+        <rect x="128" y="108" width="86" height="18" rx="9" fill="#0d1827" stroke="#1e3a5f" stroke-width="0.5"/>
+        <circle cx="140" cy="117" r="2.5" fill="#3b82f6"/>
+        <text x="147" y="121" font-family="DM Mono,monospace" font-size="9" fill="#60a5fa">EVM Analytics</text>
+        <rect x="222" y="108" width="80" height="18" rx="9" fill="#0d1827" stroke="#2d1f4e" stroke-width="0.5"/>
+        <circle cx="234" cy="117" r="2.5" fill="#8b5cf6"/>
+        <text x="241" y="121" font-family="DM Mono,monospace" font-size="9" fill="#a78bfa">Risk Scoring</text>
+        <rect x="310" y="108" width="72" height="18" rx="9" fill="#0d1827" stroke="#0f3529" stroke-width="0.5"/>
+        <circle cx="322" cy="117" r="2.5" fill="#10b981"/>
+        <text x="329" y="121" font-family="DM Mono,monospace" font-size="9" fill="#34d399">PDF Reports</text>
+        <!-- v2 badge -->
+        <rect x="390" y="108" width="34" height="18" rx="9" fill="#111827" stroke="#1f2b40" stroke-width="0.5"/>
+        <text x="407" y="121" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#475569">v 2.0</text>
+      </svg>
+      <p class="login-sub">
+        Unified portfolio management with Earned Value Analytics, real-time risk scoring,
+        and financial decision intelligence.
+      </p>
+      <div class="feature-pills">
+        <div class="pill"><span class="pill-dot" style="background:var(--blue-vivid)"></span> EVM Analytics</div>
+        <div class="pill"><span class="pill-dot" style="background:var(--emerald)"></span> Risk Intelligence</div>
+        <div class="pill"><span class="pill-dot" style="background:var(--amber)"></span> Financial Scoring</div>
+        <div class="pill"><span class="pill-dot" style="background:var(--violet)"></span> WBS Management</div>
+        <div class="pill"><span class="pill-dot" style="background:var(--rose)"></span> Smart Alerts</div>
+        <div class="pill"><span class="pill-dot" style="background:var(--text-2)"></span> CSV Reports</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-panel">
+
+    <!-- Brand header (shared) -->
+    <div class="login-card-brand">
+      <div class="login-card-logo">CC</div>
+      <div>
+        <div class="login-card-name">  CC Software</div>
+        <div class="login-card-sub">Project Intelligence Platform</div>
+      </div>
+    </div>
+    
+
+    <!-- ── Sign In ── -->
+    <div id="signin-section">
+      <div class="panel-heading">Sign in</div>
+      <p class="panel-sub">Enter your credentials to access the platform</p>
+
+      <div class="form-group">
+        <label class="form-label">Username</label>
+        <input id="login-username" class="form-input" type="text"
+               placeholder="e.g. sara_pm" autocomplete="username" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input id="login-password" class="form-input" type="password"
+               placeholder="••••••••" autocomplete="current-password" />
+      </div>
+
+      <button class="btn btn-primary" onclick="doLogin()">
+        <span id="login-label">Sign in →</span>
+        <div class="spinner" id="login-spinner" style="display:none"></div>
+      </button>
+
+      <div class="error-msg" id="login-error"></div>
+
+      <div class="sep"></div>
+      <p style="font-size:13px;color:var(--text-2);text-align:center;">
+        Don't have an account?
+        <a href="#" onclick="showSignUp()" style="color:var(--blue-glow);font-weight:600;text-decoration:none;margin-left:4px;">Sign up</a>
+      </p>
+    </div>
+
+    <!-- ── Sign Up ── -->
+    <div id="signup-section" style="display:none">
+      <div class="panel-heading">Create account</div>
+      <p class="panel-sub">Fill in the details below to get started</p>
+
+      <div class="form-group">
+        <label class="form-label">Username *</label>
+        <input id="su-username" class="form-input" type="text"
+               placeholder="e.g. ahmed_pm" autocomplete="username" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email *</label>
+        <input id="su-email" class="form-input" type="email"
+               placeholder="ahmed@company.com" autocomplete="email" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password *</label>
+        <input id="su-password" class="form-input" type="password"
+               placeholder="Min. 8 characters" autocomplete="new-password" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Confirm Password *</label>
+        <input id="su-confirm" class="form-input" type="password"
+               placeholder="Repeat your password" autocomplete="new-password" />
+      </div>
+
+      <button class="btn btn-primary" onclick="doSignUp()">
+        <span id="signup-label">Create account →</span>
+        <div class="spinner" id="signup-spinner" style="display:none"></div>
+      </button>
+
+      <div class="error-msg" id="signup-error"></div>
+
+      <div class="sep"></div>
+      <p style="font-size:13px;color:var(--text-2);text-align:center;">
+        Already have an account?
+        <a href="#" onclick="showSignIn()" style="color:var(--blue-glow);font-weight:600;text-decoration:none;margin-left:4px;">Sign in</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     MAIN APPLICATION
+     ═══════════════════════════════════════════════ -->
+<div id="app">
+  <div class="app-layout">
+
+    <!-- ── Topbar ──────────────────────────────── -->
+    <header class="topbar">
+      <div class="topbar-brand">
+        <div class="brand-logo">CC</div>
+        <div>
+          <div class="brand-name">CC Software</div>
+          <div class="brand-version">Project Intelligence Platform</div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">
+          <span id="theme-icon" class="material-symbols-outlined">light_mode</span>
+        </button>
+        <div class="notif-btn" onclick="navigate('notifications')" title="Notifications">
+          <span class="material-symbols-outlined" style="font-size:20px">notifications</span>
+          <div class="notif-badge" id="notif-count" style="display:none">0</div>
+        </div>
+        <div class="user-pill" onclick="navigate('profile')" style="cursor:pointer">
+          <div class="user-avatar" id="user-avatar">?</div>
+          <div class="user-info">
+            <div class="user-name" id="user-name-display">—</div>
+            <div class="user-role" id="user-role-display">—</div>
+          </div>
+          <span style="color:var(--text-3);font-size:12px;margin-left:4px">▾</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Sidebar ──────────────────────────────── -->
+    <nav class="sidebar">
+      <div class="sidebar-section">Overview</div>
+      <div class="nav-item active" data-page="dashboard" onclick="navigate('dashboard')">
+        <span class="nav-icon material-symbols-outlined">dashboard</span> Dashboard
+      </div>
+      <div class="nav-item" data-page="analytics" onclick="navigate('analytics')">
+        <span class="nav-icon material-symbols-outlined">analytics</span> Analytics
+      </div>
+
+      <div class="sidebar-section">Projects</div>
+      <div class="nav-item" data-page="projects" onclick="navigate('projects')">
+        <span class="nav-icon material-symbols-outlined">folder</span> All Projects
+        <span class="nav-count" id="nav-projects-count">—</span>
+      </div>
+      <div class="nav-item" data-page="selection" onclick="navigate('selection')">
+        <span class="nav-icon material-symbols-outlined">emoji_events</span> Selection & Ranking
+      </div>
+
+      <div class="sidebar-section">Execution</div>
+      <div class="nav-item" data-page="wbs" onclick="navigate('wbs')">
+        <span class="nav-icon material-symbols-outlined">assignment</span> WBS Tasks
+      </div>
+      <div class="nav-item" data-page="evm" onclick="navigate('evm')">
+        <span class="nav-icon material-symbols-outlined">show_chart</span> EVM Metrics
+      </div>
+
+      <div class="sidebar-section">System</div>
+      <div class="nav-item" data-page="notifications" onclick="navigate('notifications')">
+        <span class="nav-icon material-symbols-outlined">notifications</span> Notifications
+        <span class="nav-count" id="nav-notif-count">—</span>
+      </div>
+      <div class="nav-item" data-page="reports" onclick="navigate('reports')">
+        <span class="nav-icon material-symbols-outlined">description</span> Reports
+      </div>
+      <div class="nav-item" data-page="gantt" onclick="navigate('gantt')">
+        <span class="nav-icon material-symbols-outlined">calendar_month</span> Gantt Chart
+      </div>
+      <div class="nav-item" data-page="members" onclick="navigate('members')">
+        <span class="nav-icon material-symbols-outlined">group</span> Members
+      </div>
+      <div class="nav-item" data-page="users" onclick="navigate('users')"
+           id="nav-users" style="display:none">
+        <span class="nav-icon material-symbols-outlined">person</span> Users
+      </div>
+
+      <div class="nav-item" data-page="chatbot" onclick="navigate('chatbot')">
+        <span class="nav-icon material-symbols-outlined">psychology</span> ARIA
+      </div>
+
+      <div class="sep" style="margin-top:auto"></div>
+      <div class="nav-item" data-page="profile" onclick="navigate('profile')">
+        <span class="nav-icon material-symbols-outlined">account_circle</span> My Profile
+      </div>
+      <div class="nav-item" onclick="doLogout()">
+        <span class="nav-icon material-symbols-outlined">logout</span> Sign out
+      </div>
+    </nav>
+
+    <!-- ── Main Content ─────────────────────────── -->
+    <main class="main-content" id="main-content">
+      <!-- Pages are injected here by JavaScript -->
+    </main>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     TOAST CONTAINER
+     ═══════════════════════════════════════════════ -->
+<div id="toast"></div>
+
+
+<!-- ═══════════════════════════════════════════════
+     MODALS
+     ═══════════════════════════════════════════════ -->
+
+<!-- Project Modal -->
+<div class="modal-backdrop" id="project-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="project-modal-title">New Project</div>
+      <button class="modal-close" onclick="closeModal('project-modal')">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Project Name *</label>
+      <input id="pm-name" class="form-input" placeholder="e.g. ERP System Upgrade" />
+    </div>
+    <div class="form-group">
+      <label class="form-label">Description</label>
+      <textarea id="pm-desc" class="form-input" placeholder="Briefly describe the project scope..."></textarea>
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Budget (SAR) *</label>
+        <input id="pm-budget" class="form-input" type="number" placeholder="500000" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Status</label>
+        <select id="pm-status" class="form-input">
+          <option value="Pending">Pending</option>
+          <option value="Candidate">Candidate</option>
+          <option value="Draft">Draft</option>
+          <option value="Selected">Selected</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Project Manager</label>
+      <select id="pm-manager" class="form-input">
+        <option value="">— Unassigned —</option>
+      </select>
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Start Date</label>
+        <input id="pm-start" class="form-input" type="date" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">End Date</label>
+        <input id="pm-end" class="form-input" type="date" />
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('project-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveProject()" style="width:auto;padding:10px 28px">Save Project</button>
+    </div>
+  </div>
+</div>
+
+<!-- WBS Task Modal -->
+<div class="modal-backdrop" id="task-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="task-modal-title">Add WBS Task</div>
+      <button class="modal-close" onclick="closeModal('task-modal')">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Task Name *</label>
+      <input id="tm-name" class="form-input" placeholder="e.g. Design Phase" />
+    </div>
+    <div class="form-group">
+      <label class="form-label">Description</label>
+      <input id="tm-desc" class="form-input" placeholder="Brief task description" />
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Planned Value (PV)</label>
+        <input id="tm-pv" class="form-input" type="number" placeholder="50000" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Order Index</label>
+        <input id="tm-order" class="form-input" type="number" placeholder="1" value="0" />
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Actual Cost (AC)</label>
+        <input id="tm-ac" class="form-input" type="number" placeholder="0" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">% Complete</label>
+        <input id="tm-pct" class="form-input" type="number" placeholder="0" min="0" max="100" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Status</label>
+      <select id="tm-status" class="form-input">
+        <option value="Not Started">Not Started</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('task-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveTask()" style="width:auto;padding:10px 28px">Save Task</button>
+    </div>
+  </div>
+</div>
+
+<!-- Financial Metrics Modal -->
+<div class="modal-backdrop" id="metrics-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Financial Metrics</div>
+      <button class="modal-close" onclick="closeModal('metrics-modal')">✕</button>
+    </div>
+    <p style="color:var(--text-2);font-size:13px;margin-bottom:20px;line-height:1.6">
+      Enter financial data to automatically calculate ROI, BCR, Payback Period, and NPV.
+      Results feed into the project scoring and selection ranking.
+    </p>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Initial Investment (SAR)</label>
+        <input id="mm-invest" class="form-input" type="number" placeholder="100000" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Annual Revenue (SAR)</label>
+        <input id="mm-rev" class="form-input" type="number" placeholder="80000" />
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Annual Operating Cost (SAR)</label>
+        <input id="mm-cost" class="form-input" type="number" placeholder="30000" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Project Lifetime (years)</label>
+        <input id="mm-life" class="form-input" type="number" placeholder="5" min="1" max="50" />
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('metrics-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveMetrics()" style="width:auto;padding:10px 28px">Calculate & Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- User Modal -->
+<div class="modal-backdrop" id="user-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="user-modal-title">Add User</div>
+      <button class="modal-close" onclick="closeModal('user-modal')">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Username *</label>
+      <input id="um-username" class="form-input" placeholder="e.g. ahmed_pm" />
+    </div>
+    <div class="form-group">
+      <label class="form-label">Email *</label>
+      <input id="um-email" class="form-input" type="email" placeholder="ahmed@company.com" />
+    </div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Password *</label>
+        <input id="um-pass" class="form-input" type="password" placeholder="••••••••" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Role</label>
+        <select id="um-role" class="form-input">
+          <option value="Team Member">Team Member</option>
+          <option value="Project Manager">Project Manager</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('user-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveUser()" style="width:auto;padding:10px 28px">Create User</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════ -->
+
+<!-- Comment Modal -->
+<div class="modal-backdrop" id="comment-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="comment-modal-title">Add Comment</div>
+      <button class="modal-close" onclick="closeModal('comment-modal')">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Comment</label>
+      <textarea id="cm-content" class="form-input" style="min-height:120px"
+                placeholder="Write your comment here..."></textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('comment-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveComment()" style="width:auto;padding:10px 28px">Post Comment</button>
+    </div>
+  </div>
+</div>
+
+<!-- Member Add Modal -->
+<div class="modal-backdrop" id="member-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Add Member to Project</div>
+      <button class="modal-close" onclick="closeModal('member-modal')">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Select Project</label>
+      <select id="mbr-project" class="form-input"></select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Select User</label>
+      <select id="mbr-user" class="form-input"></select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Role in Project</label>
+      <input id="mbr-role" class="form-input" placeholder="e.g. Lead Developer" />
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('member-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveMember()" style="width:auto;padding:10px 28px">Add Member</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+function showSignUp() {
+  document.getElementById('signin-section').style.display = 'none';
+  document.getElementById('signup-section').style.display = 'block';
+  document.getElementById('su-username').focus();
+}
+
+function showSignIn() {
+  document.getElementById('signup-section').style.display = 'none';
+  document.getElementById('signin-section').style.display = 'block';
+  document.getElementById('login-username').focus();
+}
+
+function showSignUpErr(msg) {
+  const el = document.getElementById('signup-error');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+async function doSignUp() {
+  const username = document.getElementById('su-username').value.trim();
+  const email    = document.getElementById('su-email').value.trim();
+  const password = document.getElementById('su-password').value;
+  const confirm  = document.getElementById('su-confirm').value;
+  const errEl    = document.getElementById('signup-error');
+  const spinner  = document.getElementById('signup-spinner');
+  const label    = document.getElementById('signup-label');
+
+  errEl.style.display = 'none';
+
+  if (!username || !email || !password || !confirm) {
+    showSignUpErr('All fields are required.'); return;
+  }
+  if (password.length < 8) {
+    showSignUpErr('Password must be at least 8 characters.'); return;
+  }
+  if (password !== confirm) {
+    showSignUpErr('Passwords do not match.'); return;
+  }
+
+  label.style.display   = 'none';
+  spinner.style.display = 'block';
+
+  try {
+    const res = await fetch(API + '/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, email, password, role: 'Team Member' }),
+    });
+    const data = await res.json();
+    if (!res.ok) { showSignUpErr(data.detail || 'Registration failed.'); return; }
+
+    TOKEN        = data.access_token;
+    CURRENT_USER = data.user;
+    localStorage.setItem('cc_token', TOKEN);
+    localStorage.setItem('cc_user', JSON.stringify(CURRENT_USER));
+    initApp();
+  } catch (e) {
+    showSignUpErr('Network error. Please try again.');
+  } finally {
+    label.style.display   = 'inline';
+    spinner.style.display = 'none';
+  }
+}
+
+function setThemeIcons(isLight) {
+  const sym = isLight ? 'dark_mode' : 'light_mode';
+  ['theme-icon', 'login-theme-icon'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = sym;
+  });
+}
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  if (isLight) {
+    html.removeAttribute('data-theme');
+    localStorage.setItem('cc_theme', 'dark');
+  } else {
+    html.setAttribute('data-theme', 'light');
+    localStorage.setItem('cc_theme', 'light');
+  }
+  setThemeIcons(!isLight);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  setThemeIcons(document.documentElement.getAttribute('data-theme') === 'light');
+});
+</script>
+</body>
+</html>
