@@ -1,0 +1,79 @@
+<svg width="680" height="280" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="g-border" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#3b82f6"/>
+    <stop offset="100%" stop-color="#8b5cf6"/>
+  </linearGradient>
+  <linearGradient id="g-cc-icon" x1="70" y1="108" x2="196" y2="192" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#93c5fd"/>
+    <stop offset="100%" stop-color="#c4b5fd"/>
+  </linearGradient>
+  <linearGradient id="g-bar" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#3b82f6"/>
+    <stop offset="100%" stop-color="#8b5cf6"/>
+  </linearGradient>
+  <linearGradient id="g-cc-wm" x1="264" y1="92" x2="334" y2="152" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#93c5fd"/>
+    <stop offset="100%" stop-color="#60a5fa"/>
+  </linearGradient>
+  <linearGradient id="g-sep" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0"/>
+    <stop offset="30%" stop-color="#3b82f6" stop-opacity="0.5"/>
+    <stop offset="70%" stop-color="#8b5cf6" stop-opacity="0.5"/>
+    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="g-divider" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#3b82f6"/>
+    <stop offset="55%" stop-color="#8b5cf6"/>
+    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="680" height="280" rx="16" fill="#080c14"/>
+<g opacity="0.4">
+  <line x1="0" y1="93" x2="680" y2="93" stroke="#1a2235" stroke-width="0.5"/>
+  <line x1="0" y1="186" x2="680" y2="186" stroke="#1a2235" stroke-width="0.5"/>
+  <line x1="170" y1="0" x2="170" y2="280" stroke="#1a2235" stroke-width="0.5"/>
+  <line x1="340" y1="0" x2="340" y2="280" stroke="#1a2235" stroke-width="0.5"/>
+  <line x1="510" y1="0" x2="510" y2="280" stroke="#1a2235" stroke-width="0.5"/>
+</g>
+<path d="M48 70 L48 50 L68 50" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+<path d="M192 50 L212 50 L212 70" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.4"/>
+<path d="M48 194 L48 214 L68 214" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.25"/>
+<path d="M192 214 L212 214 L212 194" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.25"/>
+<rect x="48" y="50" width="164" height="164" rx="34" fill="#0d1220"/>
+<rect x="48" y="50" width="164" height="164" rx="34" fill="none" stroke="url(#g-border)" stroke-width="1.5"/>
+<circle cx="76" cy="76" r="2" fill="#1e2d45" opacity="0.9"/>
+<circle cx="130" cy="76" r="2" fill="#1e2d45" opacity="0.9"/>
+<circle cx="184" cy="76" r="2" fill="#1e2d45" opacity="0.9"/>
+<circle cx="76" cy="130" r="2" fill="#1e2d45" opacity="0.55"/>
+<circle cx="184" cy="130" r="2" fill="#1e2d45" opacity="0.55"/>
+<circle cx="76" cy="184" r="2" fill="#1e2d45" opacity="0.35"/>
+<circle cx="184" cy="184" r="2" fill="#1e2d45" opacity="0.35"/>
+<text x="130" y="150" text-anchor="middle" dominant-baseline="central" font-family="'Syne','Inter',sans-serif" font-size="64" font-weight="800" letter-spacing="-2" fill="url(#g-cc-icon)">CC</text>
+<rect x="88" y="199" width="8" height="10" rx="2" fill="url(#g-bar)" opacity="0.5"/>
+<rect x="100" y="194" width="8" height="15" rx="2" fill="url(#g-bar)" opacity="0.6"/>
+<rect x="112" y="187" width="8" height="22" rx="2" fill="url(#g-bar)" opacity="0.85"/>
+<rect x="124" y="191" width="8" height="18" rx="2" fill="url(#g-bar)" opacity="0.75"/>
+<rect x="136" y="195" width="8" height="14" rx="2" fill="url(#g-bar)" opacity="0.65"/>
+<rect x="148" y="199" width="8" height="10" rx="2" fill="url(#g-bar)" opacity="0.55"/>
+<rect x="160" y="202" width="8" height="7" rx="2" fill="url(#g-bar)" opacity="0.45"/>
+<line x1="86" y1="210" x2="172" y2="210" stroke="#1a2235" stroke-width="0.5"/>
+<line x1="238" y1="50" x2="238" y2="214" stroke="url(#g-sep)" stroke-width="0.5"/>
+<text x="264" y="145" font-family="'Syne','Inter',sans-serif" font-size="54" font-weight="800" letter-spacing="-1" fill="url(#g-cc-wm)">CC</text>
+<text x="344" y="145" font-family="'Syne','Inter',sans-serif" font-size="44" font-weight="300" fill="#cbd5e1">Software</text>
+<rect x="264" y="158" width="330" height="0.5" fill="url(#g-divider)"/>
+<text x="264" y="178" font-family="'DM Mono','Courier New',monospace" font-size="13" fill="#64748b" letter-spacing="0.035em">Project Intelligence Platform</text>
+<rect x="264" y="195" width="112" height="22" rx="11" fill="#0d1827" stroke="#1e3a5f" stroke-width="0.5"/>
+<circle cx="278" cy="206" r="3.5" fill="#3b82f6"/>
+<text x="286" y="210" font-family="'DM Mono','Courier New',monospace" font-size="10.5" fill="#60a5fa">EVM Analytics</text>
+<rect x="384" y="195" width="104" height="22" rx="11" fill="#0d1827" stroke="#2d1f4e" stroke-width="0.5"/>
+<circle cx="398" cy="206" r="3.5" fill="#8b5cf6"/>
+<text x="406" y="210" font-family="'DM Mono','Courier New',monospace" font-size="10.5" fill="#a78bfa">Risk Scoring</text>
+<rect x="496" y="195" width="96" height="22" rx="11" fill="#0d1827" stroke="#0f3529" stroke-width="0.5"/>
+<circle cx="510" cy="206" r="3.5" fill="#10b981"/>
+<text x="518" y="210" font-family="'DM Mono','Courier New',monospace" font-size="10.5" fill="#34d399">PDF Reports</text>
+<rect x="264" y="230" width="44" height="18" rx="9" fill="#111827" stroke="#1f2b40" stroke-width="0.5"/>
+<text x="286" y="243" text-anchor="middle" font-family="'DM Mono','Courier New',monospace" font-size="9" fill="#475569">v 2.0</text>
+<path d="M645 16 L664 16 L664 36" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.22"/>
+<path d="M16 244 L16 264 L36 264" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.22"/>
+</svg>
