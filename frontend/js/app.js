@@ -1,6 +1,6 @@
 
 
-const API = 'http://localhost:8000'; 
+const API = 'https://cc-software.onrender.com'; 
 
 let TOKEN        = localStorage.getItem('cc_token')  || null;
 let CURRENT_USER = JSON.parse(localStorage.getItem('cc_user') || 'null');
